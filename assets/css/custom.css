@@ -5,11 +5,12 @@
   margin: auto;
 }
 
-.wrapper{
+.center-of-page{
   position: absolute;
   top: 45%;
   left: 50%;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   text-align:center;
   transform: translateX(-50%);
 }
