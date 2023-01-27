@@ -1,0 +1,15 @@
+.wip-calculator-form {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  margin: auto;
+}
+
+.wrapper{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 600px;
+  text-align:center;
+  transform: translateX(-50%);
+}

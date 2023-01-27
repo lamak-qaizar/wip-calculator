@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="assets/css/custom.css" rel="stylesheet">
 
     <title>WIP Calculator</title>
 </head>
@@ -12,34 +15,130 @@
 
 <div class="container">
     <div class="py-5 text-center">
-        <h2>WIP Calculator</h2>
-        <p class="lead">Computes the optimal WIP for a team.</p>
+        <h1>WIP Calculator</h1>
+        <p class="lead">Computes the optimal WIP (work-in-progress) for a team.</p>
     </div>
 
-    <div class="row">
-        <div class="col">
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+    <form class="wip-calculator-form">
+
+        <h4>Team profile</h4>
+
+        <div class="form-group">
+            <label># of team members</label>
+            <select class="form-control form-control-lg">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+            </select>
         </div>
-    </div>
+
+        <div class="form-group">
+            <label># of distinct skill-sets in the team</label>
+            <select class="form-control form-control-lg">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+            </select>
+            <small class="form-text text-muted">e.g. if the team comprises back-end and web engineers, enter 2</small>
+        </div>
+
+        <div class="form-group">
+            <label># of languages/frameworks used by the team</label>
+            <select class="form-control form-control-lg">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+            </select>
+            <small class="form-text text-muted">e.g. if the team works on Java/Spring and ReactJS, enter 2</small>
+        </div>
+
+        <div class="form-group">
+            <label >Describe the business domain and role of the team</label>
+            <input type="text" class="form-control form-control-lg"
+                   placeholder="Enter keywords (comma separated)">
+            <small class="form-text text-muted">e.g. "fintech,sre", "ride-hailing,locations,tracking", "data-engineering"</small>
+        </div>
+
+        <div class="form-group">
+            <label># of handovers following completion of code</label>
+            <select class="form-control form-control-lg">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            <small class="form-text text-muted">e.g. if the code is handed over to QA followed by Ops, enter 2</small>
+        </div>
+
+        <hr/>
+
+        <h4>Mark all that apply</h4>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label">Is the team "Agile"?</label>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label">Is there a product manager and/or designer in the team?</label>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label">Is there source control?</label>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label">Are build and deployment pipelines are automated?</label>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label">Does the team have quiet working conditions?</label>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label">Is there a backlog of bugs?</label>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label">Is there a QA department?</label>
+        </div>
+
+        <hr/>
+
+        <a href="loading.html" type="submit" class="btn btn-danger btn-lg btn-block">What's my optimal WIP?</a>
+    </form>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">Accuracy of current model: 99.0%</p>
+    </footer>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
